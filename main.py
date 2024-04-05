@@ -3,10 +3,17 @@ import requests
 from bs4 import BeautifulSoup
 import git
 
+
+base_url = "https://github.com/"
+username = "Mahedere"
+token = "your_personal_access_token"  # replace with your personal access token
+url = f"{base_url}{username}?tab=repositories"
+
+
 base_url = "https://github.com/"
 url = f"{base_url}Mahedere?tab=repositories"
 
-response = requests.get(url)
+response = requests.get(url, headers={'Authorization': f'token {token}'})
 parsed = BeautifulSoup(response.text, 'html.parser')
 list_of_repo = parsed.find(id='user-repositories-list').find_all('li')
 new_list_resolved_list_of_urls = []

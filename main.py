@@ -5,12 +5,10 @@ import git
 
 
 base_url = "https://github.com/"
-username = "Mahedere"
+username = "repo user name"
 token = "your_personal_access_token"  # replace with your personal access token
 url = f"{base_url}{username}?tab=repositories"
 
-
-base_url = "https://github.com/"
 url = f"{base_url}Mahedere?tab=repositories"
 
 response = requests.get(url, headers={'Authorization': f'token {token}'})
